@@ -45,7 +45,7 @@ class Consumer(threading.Thread):
     def run(self):
         """
         Gibt alle Zahlen aus, die aus der geteilten Queue
-        empfange nwerden.
+        empfangen werden.
         :return: None
         """
 
