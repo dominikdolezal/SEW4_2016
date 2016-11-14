@@ -56,7 +56,6 @@ class Consumer(threading.Thread):
 
 
 if __name__ == '__main__':
-    numbers = []
     queue = queue.Queue()
     t1 = Producer(queue)
     t2 = Consumer(queue)

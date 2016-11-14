@@ -29,7 +29,7 @@ class SimpleWorker(threading.Thread):
         # Wort als globale Variable "importieren"
         global word
         # Auf das Event warten (blockiert)
-        event.wait()
+        self.event.wait()
         temp = []
 
         for i in range(len(word)):
