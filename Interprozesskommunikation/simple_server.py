@@ -13,16 +13,16 @@ class SimpleServer(object):
 
     def bind_and_listen(self):
         # eine TCP Connection (Stream) über host und port erstellen
-        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as self.serversocket:
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as serversocket:
             # Binding erstellen und auf localhost am angegebenen Port horchen
-            self.serversocket.bind(('localhost', self.port))
+            serversocket.bind(('localhost', self.port))
             # Eingehende Verbindungen ab jetzt annehmen (mit maximal 5 pending connections)
-            self.serversocket.listen(5)
+            serversocket.listen(5)
             try:
                 while True:
                     print("Auf client warten...")
                     # Blockierender Aufruf! Client wird empfangen (Gegenpart: connect() )
-                    (clientsocket, address) = self.serversocket.accept()
+                    (clientsocket, address) = serversocket.accept()
                     print("Client verbunden! Warte auf Nachricht...")
                     while True:
                         # Nachricht empfangen
